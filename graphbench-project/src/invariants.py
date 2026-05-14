@@ -26,4 +26,6 @@ def compute_invariants(G):
     triangles = sum(nx.triangles(G).values()) // 3
     invariants["triangles"] = triangles
 
+    invariants["clustering"] = nx.average_clustering(G)
+
     return invariants

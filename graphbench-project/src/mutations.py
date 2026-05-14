@@ -2,25 +2,34 @@ import random
 import networkx as nx
 
 
+
 def add_random_edge(G):
 
     nodes = list(G.nodes())
 
-    u = random.choice(nodes)
-    v = random.choice(nodes)
+    for _ in range(20):
 
-    if u != v:
-        G.add_edge(u, v)
+        u = random.choice(nodes)
+        v = random.choice(nodes)
+
+        if u != v and not G.has_edge(u, v):
+
+            G.add_edge(u, v)
+
+            return G
 
     return G
 
 
+
 def remove_random_edge(G):
 
-    if G.number_of_edges() == 0:
+    edges = list(G.edges())
+
+    if not edges:
         return G
 
-    edge = random.choice(list(G.edges()))
+    edge = random.choice(edges)
 
     G.remove_edge(*edge)
 
@@ -30,14 +39,33 @@ def remove_random_edge(G):
     return G
 
 
+
 def add_random_node(G):
 
     new_node = max(G.nodes()) + 1
 
     G.add_node(new_node)
 
-    target = random.choice(list(G.nodes()))
+    targets = random.sample(list(G.nodes()), k=min(2, len(G.nodes())))
 
-    G.add_edge(new_node, target)
+    for t in targets:
+        if t != new_node:
+            G.add_edge(new_node, t)
+
+    return G
+
+
+
+def densify_graph(G):
+
+    nodes = list(G.nodes())
+
+    for _ in range(3):
+
+        u = random.choice(nodes)
+        v = random.choice(nodes)
+
+        if u != v:
+            G.add_edge(u, v)
 
     return G

@@ -1,5 +1,6 @@
 import copy
 import random
+import time
 
 from mutations import (
     add_random_edge,
@@ -11,46 +12,58 @@ from invariants import compute_invariants
 from scoring import violation_score
 
 
+MUTATIONS = [
+    add_random_edge,
+    remove_random_edge,
+    add_random_node
+]
+
+
+
 def mutate_graph(G):
 
-    mutations = [
-        add_random_edge,
-        remove_random_edge,
-        add_random_node
-    ]
-
-    mutation = random.choice(mutations)
+    mutation = random.choice(MUTATIONS)
 
     return mutation(G)
 
 
-def local_search(initial_graph, iterations=100):
 
-    best_graph = copy.deepcopy(initial_graph)
+def beam_search(initial_graph, beam_width=10, iterations=300):
 
-    best_invariants = compute_invariants(best_graph)
+    beam = [copy.deepcopy(initial_graph)]
 
-    best_score = violation_score(best_invariants)
+    best_graph = initial_graph
+    best_score = -999999
+    best_inv = None
 
-    print("\nScore initial :", best_score)
+    for iteration in range(iterations):
 
-    for i in range(iterations):
+        candidates = []
 
-        candidate = copy.deepcopy(best_graph)
+        for graph in beam:
 
-        candidate = mutate_graph(candidate)
+            for _ in range(5):
 
-        invariants = compute_invariants(candidate)
+                candidate = copy.deepcopy(graph)
 
-        score = violation_score(invariants)
+                candidate = mutate_graph(candidate)
 
-        if score > best_score:
+                inv = compute_invariants(candidate)
 
-            best_graph = candidate
-            best_score = score
-            best_invariants = invariants
+                score = violation_score(inv)
 
-            print(f"Nouvelle amélioration à l'itération {i}")
-            print("Score :", best_score)
+                candidates.append((score, candidate, inv))
 
-    return best_graph, best_score, best_invariants
+        candidates.sort(key=lambda x: x[0], reverse=True)
+
+        beam = [c[1] for c in candidates[:beam_width]]
+
+        if candidates[0][0] > best_score:
+
+            best_score = candidates[0][0]
+            best_graph = candidates[0][1]
+            best_inv = candidates[0][2]
+
+            print(f"Itération {iteration} | Nouveau meilleur score : {best_score}")
+
+    return best_graph, best_score, best_inv
