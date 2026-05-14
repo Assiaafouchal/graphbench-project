@@ -1,27 +1,18 @@
 # GraphBench Project
 
-Structure minimale du projet pour lancer des benchmarks sur des graphes.
+Projet M1 MIAGE — Réfutation automatique de conjectures en théorie des graphes.
 
-Organisation:
+## Fonctionnalités
 
-- `benchmark/benchmark.xlsx`: fichier de données de benchmark (placeholder).
-- `results/`: sortie des expériences.
-- `src/`: code source Python.
+- Génération automatique de graphes
+- Calcul des invariants
+- Mutations locales
+- Recherche locale
+- Évaluation heuristique
+- Calcul de violation
 
-Fichiers principaux dans `src/`:
-- `main.py`: point d'entrée.
-- `benchmark_loader.py`, `graph_generator.py`, `invariants.py`, `scoring.py`, `mutations.py`, `repair.py`, `search.py`, `utils.py`, `config.py`.
+## Lancement
 
-Installation minimale:
-
-```
-pip install -r requirements.txt
-```
-
-Usage:
-
-```
+```bash
 python src/main.py
 ```
-
-Licence: MIT (à adapter)

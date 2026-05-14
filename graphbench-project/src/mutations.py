@@ -24,7 +24,6 @@ def remove_random_edge(G):
 
     G.remove_edge(*edge)
 
-    # garder la connexité
     if not nx.is_connected(G):
         G.add_edge(*edge)
 

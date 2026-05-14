@@ -1,8 +1,10 @@
 def violation_score(invariants):
 
-    """
-    Score temporaire simple
-    """
+    if invariants["diam"] == float("inf"):
+        return -9999
+
+    if invariants["rad"] == float("inf"):
+        return -9999
 
     delta = invariants["delta"]
     Delta = invariants["Delta"]
