@@ -1,34 +1,24 @@
+# ============================================================
+# search.py
+# ============================================================
+
 import copy
 import random
-import time
 
 from mutations import (
-    add_random_edge,
-    remove_random_edge,
-    add_random_node
+    mutate_graph
 )
 
 from invariants import compute_invariants
 from scoring import violation_score
 
+# ============================================================
 
-MUTATIONS = [
-    add_random_edge,
-    remove_random_edge,
-    add_random_node
-]
-
-
-
-def mutate_graph(G):
-
-    mutation = random.choice(MUTATIONS)
-
-    return mutation(G)
-
-
-
-def beam_search(initial_graph, beam_width=10, iterations=300):
+def beam_search(
+    initial_graph,
+    beam_width=5,
+    iterations=20
+):
 
     beam = [copy.deepcopy(initial_graph)]
 
@@ -36,27 +26,47 @@ def beam_search(initial_graph, beam_width=10, iterations=300):
     best_score = -999999
     best_inv = None
 
+    # ========================================================
+
     for iteration in range(iterations):
 
         candidates = []
 
         for graph in beam:
 
-            for _ in range(5):
+            for _ in range(3):
 
                 candidate = copy.deepcopy(graph)
 
-                candidate = mutate_graph(candidate)
+                candidate = mutate_graph(
+                    candidate
+                )
 
-                inv = compute_invariants(candidate)
+                inv = compute_invariants(
+                    candidate
+                )
 
-                score = violation_score(inv)
+                score = violation_score(
+                    inv
+                )
 
-                candidates.append((score, candidate, inv))
+                candidates.append(
+                    (
+                        score,
+                        candidate,
+                        inv
+                    )
+                )
 
-        candidates.sort(key=lambda x: x[0], reverse=True)
+        candidates.sort(
+            key=lambda x: x[0],
+            reverse=True
+        )
 
-        beam = [c[1] for c in candidates[:beam_width]]
+        beam = [
+            c[1]
+            for c in candidates[:beam_width]
+        ]
 
         if candidates[0][0] > best_score:
 
@@ -64,6 +74,14 @@ def beam_search(initial_graph, beam_width=10, iterations=300):
             best_graph = candidates[0][1]
             best_inv = candidates[0][2]
 
-            print(f"Itération {iteration} | Nouveau meilleur score : {best_score}")
+            print(
+                f"Itération {iteration} | "
+                f"Nouveau meilleur score : "
+                f"{best_score}"
+            )
 
-    return best_graph, best_score, best_inv
+    return (
+        best_graph,
+        best_score,
+        best_inv
+    )

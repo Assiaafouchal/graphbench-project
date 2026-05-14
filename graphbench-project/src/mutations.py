@@ -1,7 +1,29 @@
+# ============================================================
+# mutations.py
+# ============================================================
+
 import random
 import networkx as nx
 
+# ============================================================
 
+def mutate_graph(G):
+
+    mutations = [
+
+        add_random_edge,
+        remove_random_edge,
+        add_random_node,
+        densify_graph
+    ]
+
+    mutation = random.choice(
+        mutations
+    )
+
+    return mutation(G)
+
+# ============================================================
 
 def add_random_edge(G):
 
@@ -20,13 +42,14 @@ def add_random_edge(G):
 
     return G
 
-
+# ============================================================
 
 def remove_random_edge(G):
 
     edges = list(G.edges())
 
-    if not edges:
+    if len(edges) == 0:
+
         return G
 
     edge = random.choice(edges)
@@ -34,11 +57,12 @@ def remove_random_edge(G):
     G.remove_edge(*edge)
 
     if not nx.is_connected(G):
+
         G.add_edge(*edge)
 
     return G
 
-
+# ============================================================
 
 def add_random_node(G):
 
@@ -46,26 +70,32 @@ def add_random_node(G):
 
     G.add_node(new_node)
 
-    targets = random.sample(list(G.nodes()), k=min(2, len(G.nodes())))
+    targets = random.sample(
+        list(G.nodes()),
+        k=min(3, len(G.nodes()))
+    )
 
     for t in targets:
+
         if t != new_node:
+
             G.add_edge(new_node, t)
 
     return G
 
-
+# ============================================================
 
 def densify_graph(G):
 
     nodes = list(G.nodes())
 
-    for _ in range(3):
+    for _ in range(5):
 
         u = random.choice(nodes)
         v = random.choice(nodes)
 
         if u != v:
+
             G.add_edge(u, v)
 
     return G
