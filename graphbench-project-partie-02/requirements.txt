@@ -1,0 +1,6 @@
+networkx
+pandas
+numpy
+openpyxl
+matplotlib
+anthropic

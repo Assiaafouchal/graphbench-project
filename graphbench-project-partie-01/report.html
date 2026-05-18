@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GraphBench Challenge — Rapport</title>
+<style>
+  /* ── Reset & base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.65;
+    color: #1a1a1a;
+    background: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 48px;
+  }
+
+  /* ── Typography ── */
+  h1 {
+    font-size: 22pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+  }
+  h2.subtitle {
+    font-size: 13pt;
+    font-weight: normal;
+    text-align: center;
+    color: #444;
+    margin-bottom: 28px;
+  }
+  h2 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 32px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 4px;
+    page-break-after: avoid;
+  }
+  h3 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    color: #2c2c2c;
+    page-break-after: avoid;
+  }
+  p { margin-bottom: 10px; }
+  ul, ol { margin: 8px 0 10px 24px; }
+  li { margin-bottom: 4px; }
+
+  /* ── Cover block ── */
+  .cover {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 18px 24px;
+    margin-bottom: 32px;
+    background: #fafafa;
+    font-size: 10.5pt;
+  }
+  .cover p { margin-bottom: 5px; }
+  .cover strong { color: #1a1a1a; }
+
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
+  }
+
+  /* ── Blockquote ── */
+  blockquote {
+    border-left: 4px solid #888;
+    margin: 10px 0 10px 10px;
+    padding: 6px 14px;
+    color: #333;
+    font-style: italic;
+    background: #f8f8f8;
+  }
+
+  /* ── Code ── */
+  code {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 9.5pt;
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 1px 4px;
+  }
+  pre {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 9pt;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    page-break-inside: avoid;
+  }
+  pre code { background: none; border: none; padding: 0; font-size: inherit; }
+
+  /* ── Tables ── */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12px 0;
+    font-size: 10pt;
+    page-break-inside: avoid;
+  }
+  th {
+    background: #2c2c2c;
+    color: #fff;
+    padding: 7px 10px;
+    text-align: left;
+    font-weight: bold;
+  }
+  td { padding: 6px 10px; border-bottom: 1px solid #ddd; }
+  tr:nth-child(even) td { background: #f7f7f7; }
+
+  /* ── Print ── */
+  @media print {
+    body { margin: 0; padding: 20mm 22mm; max-width: none; font-size: 10.5pt; }
+    h2 { page-break-before: auto; }
+    pre, table, blockquote { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════ COUVERTURE ══════════════════════════════ -->
+<h1>GraphBench Challenge</h1>
+<h2 class="subtitle">Réfutation automatique de conjectures en théorie des graphes</h2>
+
+<div class="cover">
+  <p><strong>Étudiantes :</strong> ASSIA AFOUCHAL &amp; NOUR EL HADJ-MSAIDI FATIMA</p>
+  <p><strong>Formation :</strong> Master 1 MIAGE</p>
+  <p><strong>Date :</strong> Mai 2026</p>
+  
+</div>
+
+<!-- ══════════════════════════════ SECTION 1 ══════════════════════════════ -->
+<h2>1. Introduction et objectif</h2>
+
+<h3>1.1 Contexte</h3>
+<p>Une conjecture en théorie des graphes affirme qu'une propriété est vraie pour tous les graphes d'une certaine classe. La forme générale est :</p>
+<blockquote>∀G ∈ C, A(G) ≤ f(B(G))</blockquote>
+<p>où A(G) et B(G) sont des invariants structurels (diamètre, domination, couplage, connectivité…) et C est une classe de graphes (connexes, arbres, sans griffe, bipartis, planaires).</p>
+<p>L'objectif du projet est de concevoir un programme capable de <strong>réfuter automatiquement</strong> ces conjectures en cherchant des contre-exemples : des graphes G pour lesquels la violation est strictement positive.</p>
+
+<h3>1.2 Benchmark</h3>
+<p>Le benchmark fourni contient <strong>100 conjectures</strong> portant sur cinq classes de graphes :</p>
+<table>
+  <tr><th>Classe</th><th>Nombre de conjectures</th></tr>
+  <tr><td>connected</td><td>44</td></tr>
+  <tr><td>claw_free</td><td>50</td></tr>
+  <tr><td>tree</td><td>6</td></tr>
+</table>
+<p>Les polynômes f sont à coefficients rationnels, jusqu'au degré 3. Les invariants manipulés incluent : n, m, diam, rad, δ, Δ, avg, t, ω, γ, γ<sub>t</sub>, α, τ, µ, κ, κ′, λ₂, proximity, remoteness.</p>
+
+<h3>1.3 Règle d'évaluation</h3>
+<p>Pour chaque conjecture, la limite de temps est de 60 secondes. Le coût est :</p>
+<ul>
+  <li><strong>c<sub>i</sub> = t<sub>i</sub></strong> si un contre-exemple est trouvé en t<sub>i</sub> secondes</li>
+  <li><strong>c<sub>i</sub> = 120</strong> sinon</li>
+</ul>
+<p>Le score total est la somme des coûts. <strong>L'objectif est de minimiser ce score.</strong></p>
+
+<!-- ══════════════════════════════ SECTION 2 ══════════════════════════════ -->
+<h2>2. Heuristique simple (Partie 1)</h2>
+
+<h3>2.1 Architecture générale</h3>
+<p>Notre heuristique suit le schéma algorithmique imposé, organisé en <strong>trois phases successives</strong> pour chaque conjecture, avec une limite de temps globale de 60 secondes.</p>
+<pre>Pour chaque conjecture :
+  Phase 1 : Test exhaustif Atlas (n ≤ 7)     [~0.3s]
+  Phase 2 : Batterie canonique (budget 8s)    [~8s]
+  Phase 3 : Beam search multi-démarrage       [~52s restantes]</pre>
+
+<h3>2.2 Représentation des graphes</h3>
+<p>Les graphes sont représentés par des objets <code>nx.Graph</code> de la bibliothèque NetworkX. Les nœuds sont des entiers. Le format graph6 est produit via <code>nx.to_graph6_bytes()</code>.</p>
+
+<h3>2.3 Calcul des invariants</h3>
+<p>Tous les invariants requis sont calculés dans <code>invariants.py</code>. Les invariants NP-difficiles (domination, indépendance, couplage) sont approchés par des algorithmes gloutons en O(n·Δ) :</p>
+<ul>
+  <li><strong>Domination (γ)</strong> : couverture gloutonne par degré décroissant</li>
+  <li><strong>Domination totale (γ<sub>t</sub>)</strong> : variante couvrant les voisins de chaque sommet</li>
+  <li><strong>Indépendance (α)</strong> : sélection gloutonne par degré croissant</li>
+  <li><strong>Couplage (µ)</strong> : <code>nx.max_weight_matching</code> (exact pour n ≤ 40)</li>
+  <li><strong>Connectivité (κ, κ′)</strong> : <code>nx.node_connectivity</code>, <code>nx.edge_connectivity</code></li>
+  <li><strong>λ₂ (Fiedler)</strong> : <code>np.linalg.eigvalsh(L)[1]</code> (LAPACK dense, évite les divergences de l'itératif scipy)</li>
+</ul>
+
+<h3>2.4 Phase 1 — Graph Atlas exhaustif</h3>
+<p>Tous les graphes connexes de taille n ≤ 7 sont testés depuis le Graph Atlas de NetworkX. <strong>Le graphe K₁ (n=1) est explicitement testé en premier</strong>, ce qui s'est révélé crucial : proximity(K₁) = remoteness(K₁) = 0, violant de nombreuses conjectures de la forme <code>Y ≥ f(proximity)</code> dès lors que f(0) &gt; Y(K₁).</p>
+
+<h3>2.5 Phase 2 — Batterie de graphes canoniques</h3>
+<p>Un générateur systématique produit des graphes extrémaux connus pour être difficiles, dans la limite de 8 secondes :</p>
+<table>
+  <tr><th>Famille</th><th>Intérêt</th></tr>
+  <tr><td>Chemins P<sub>n</sub>, étoiles S<sub>n</sub>, cycles C<sub>n</sub></td><td>Base universelle</td></tr>
+  <tr><td>Graphes complets K<sub>n</sub>, bipartis K<sub>p,q</sub></td><td>Densité extrême</td></tr>
+  <tr><td>Spider graphs (centre + k bras)</td><td>Extremaux pour γ<sub>t</sub>, α, µ</td></tr>
+  <tr><td>Caterpillars (chemin + feuilles)</td><td>Arbres à domination élevée</td></tr>
+  <tr><td>Lollipop, barbell, tadpole</td><td>Structures mixtes clique+chemin</td></tr>
+  <tr><td>Graphes de Turán T(n,r)</td><td>Extremaux pour ω</td></tr>
+  <tr><td>Puissances de cycles C<sub>n</sub>², C<sub>n</sub>³</td><td>Garantis sans griffe</td></tr>
+  <tr><td>Graphes de lignes L(K<sub>k</sub>), L(C<sub>k</sub>)</td><td>Sans griffe, riches en triangles</td></tr>
+  <tr><td>Graphes circulants, grilles</td><td>Distance et régularité</td></tr>
+</table>
+
+<h3>2.6 Phase 3 — Beam search multi-démarrage</h3>
+<p>Un beam search de largeur 15 explore l'espace des graphes par mutations successives. À chaque itération, 8 candidats sont générés par graphe du beam. Des relances aléatoires toutes les 7 secondes évitent les optima locaux.</p>
+<p><strong>Mutations implémentées :</strong></p>
+<ul>
+  <li>Ajout / suppression d'arête</li>
+  <li>Ajout d'un sommet (avec connexion à 2 voisins aléatoires)</li>
+  <li>Subdivision d'une arête</li>
+  <li>Ajout d'une feuille</li>
+  <li>Densification locale (3 arêtes aléatoires)</li>
+</ul>
+<p><strong>Stratégie de relance :</strong></p>
+<ul>
+  <li>Si score &gt; 0.05 : mode intensif (perturbations légères autour du meilleur graphe)</li>
+  <li>Sinon : mode diversification (nouveau graphe aléatoire + spider aléatoire + graphe grande taille)</li>
+</ul>
+
+<h3>2.7 Mécanisme de réparation</h3>
+<p>Après chaque mutation, <code>repair.py</code> vérifie et restaure la contrainte de classe :</p>
+<table>
+  <tr><th>Classe</th><th>Stratégie de réparation</th></tr>
+  <tr><td>connected</td><td>Ajout d'une arête entre deux composantes</td></tr>
+  <tr><td>tree</td><td>Calcul de l'arbre couvrant (supprime les cycles)</td></tr>
+  <tr><td>claw_free</td><td>Détection des K₁,₃ induits, suppression d'une arête par griffe</td></tr>
+  <tr><td>bipartite</td><td>Recoloration BFS 2-coloring, suppression des arêtes intra-couleur</td></tr>
+  <tr><td>planar</td><td>Suppression aléatoire d'arêtes jusqu'à planarité</td></tr>
+</table>
+
+<h3>2.8 Fonction de score</h3>
+<pre><code>def violation_score(invariants, conjecture):
+    v = conjecture.violation(invariants)
+    return v if v is not None else -99999.0</code></pre>
+<p>La violation est calculée selon la direction de la conjecture :</p>
+<ul>
+  <li>Pour A ≤ f(B) : violation = A(G) − f(B(G))</li>
+  <li>Pour A ≥ f(B) : violation = f(B(G)) − A(G)</li>
+</ul>
+
+<!-- ══════════════════════════════ SECTION 3 ══════════════════════════════ -->
+<h2>3. Architecture FunSearch (Partie 2)</h2>
+
+<h3>3.1 Principe</h3>
+<p>La partie 2 automatise l'amélioration de la fonction de score via un LLM (Claude Sonnet, Anthropic API). L'idée est de remplacer le score brut <code>violation(G)</code> par une fonction plus informative :</p>
+<blockquote>F(G) = violation(G) + bonus(G) − penalty(G)</blockquote>
+<p>qui guide la recherche vers des graphes prometteurs avant même qu'ils soient des contre-exemples.</p>
+
+<h3>3.2 Boucle d'évolution</h3>
+<pre>pool = [fonction_de_base]
+Pour chaque round (n_rounds = 4) :
+  1. Sélectionner les 2 meilleures fonctions du pool
+  2. Envoyer au LLM avec leur score moyen
+  3. LLM génère une nouvelle variante heuristic_score
+  4. Évaluer sur sample_data (8 paires graphe/conjecture)
+  5. Ajouter au pool, trier, conserver les pool_size=4 meilleures
+Retourner la meilleure fonction</pre>
+
+<h3>3.3 Forme de la fonction générée</h3>
+<p>La signature imposée est exactement :</p>
+<pre><code>def heuristic_score(G, invariants, conjecture):
+    violation = conjecture.violation(invariants)
+    n = invariants.get("n", 0)
+    m = invariants.get("m", 0)
+    # ...
+    return score_numerique</code></pre>
+
+<h3>3.4 Prompt LLM</h3>
+<p>Le LLM reçoit les k meilleures fonctions avec leurs scores moyens, et est invité à proposer une variante améliorée qui combine les invariants disponibles (n, m, diam, Δ, γ, α, λ₂, proximity…) en bonus et pénalités pour guider la recherche.</p>
+
+<h3>3.5 Exemple de fonction générée</h3>
+<p>La fonction de base fournie dans le sujet sert de point de départ :</p>
+<pre><code>def heuristic_score(G, invariants, conjecture):
+    violation = conjecture.violation(invariants)
+    density = 2*m/(n*(n-1)) if n > 1 else 0
+    return (10.0 * violation + 0.3 * diam + 0.2 * Delta
+            + 0.1 * triangles - 0.05 * n - 0.2 * abs(density - 0.5))</code></pre>
+<p>Le LLM propose ensuite des variantes qui peuvent ajouter des termes liés à la connectivité, l'indépendance, ou la structure locale selon la conjecture en cours.</p>
+
+<!-- ══════════════════════════════ SECTION 4 ══════════════════════════════ -->
+<h2>4. Résultats expérimentaux</h2>
+
+<h3>4.1 Performance globale</h3>
+<table>
+  <tr><th>Métrique</th><th>Valeur</th></tr>
+  <tr><td>Conjectures réfutées</td><td><strong>96 / 100</strong></td></tr>
+  <tr><td>Score total (coût)</td><td><em>(voir results.csv)</em></td></tr>
+  <tr><td>Temps moyen (trouvées)</td><td>~3–5 secondes</td></tr>
+</table>
+
+<h3>4.2 Répartition par phase</h3>
+<table>
+  <tr><th>Phase</th><th>Conjectures trouvées</th><th>Temps typique</th></tr>
+  <tr><td>Atlas K₁ (n=1)</td><td>~15</td><td>&lt; 0,01 s</td></tr>
+  <tr><td>Atlas (n=2..7)</td><td>~30</td><td>&lt; 0,5 s</td></tr>
+  <tr><td>Batterie canonique</td><td>~20</td><td>1–9 s</td></tr>
+  <tr><td>Beam search</td><td>~31</td><td>5–56 s</td></tr>
+</table>
+
+<h3>4.3 Conjectures non réfutées (4/100)</h3>
+<p>Les 4 conjectures non réfutées semblent être des théorèmes vrais :</p>
+<table>
+  <tr><th>Conj.</th><th>Relation</th><th>Raison</th></tr>
+  <tr><td>9</td><td>µ ≥ (2/3)γ<sub>t</sub> − 1/3</td><td>Égalité atteinte, aucune violation trouvée</td></tr>
+  <tr><td>11</td><td>τ ≥ (2/3)γ<sub>t</sub> − 1/3</td><td>Idem</td></tr>
+  <tr><td>15</td><td>γ<sub>t</sub> ≤ (3/2)τ + 1/2</td><td>Idem</td></tr>
+  <tr><td>19</td><td>γ<sub>t</sub> ≤ (3/2)µ + 1/2</td><td>Idem (conjectures 9 et 19 sont équivalentes)</td></tr>
+</table>
+<p>Ces quatre relations impliquent le même lien entre couplage maximum et domination totale. Des essais intensifs (spiders, caterpillars, graphes aléatoires jusqu'à n=30) donnent toujours un score exactement nul, suggérant que ces bornes sont des théorèmes en graphes connexes.</p>
+
+<h3>4.4 Découverte clé — K₁ comme contre-exemple universel</h3>
+<p>L'observation la plus importante de ce projet est que <strong>le graphe K₁ (un seul sommet)</strong> constitue un contre-exemple pour 14 conjectures de la forme :</p>
+<ul>
+  <li><code>proximity ≥ f(X)</code> : pour K₁, proximity = 0, donc si f(X(K₁)) &gt; 0, la conjecture est violée</li>
+  <li><code>Y ≥ f(proximity)</code> : pour K₁, f(0) = intercept &gt; 0 &gt; Y(K₁)</li>
+</ul>
+<p>Ce graphe trivial était omis de la recherche initiale (le Graph Atlas ne testait que n ≥ 2). Son ajout a fait passer le résultat de <strong>78/100 à 92/100</strong> en une seule modification.</p>
+
+<h3>4.5 Évolution des performances</h3>
+<table>
+  <tr><th>Version</th><th>Conjectures réfutées</th><th>Observation</th></tr>
+  <tr><td>Initiale (bugs corrigés)</td><td>30/100</td><td>Invariants incomplets, pas de réparation</td></tr>
+  <tr><td>+ Beam search 3 phases</td><td>78/100</td><td>Atlas + canonique + beam search</td></tr>
+  <tr><td>+ K₁ explicite</td><td>92/100</td><td>14 conjectures résolues instantanément</td></tr>
+  <tr><td>+ Optimisations diverses</td><td>96/100</td><td>Spiders, budget temporel, intensive mode</td></tr>
+</table>
+
+<!-- ══════════════════════════════ SECTION 5 ══════════════════════════════ -->
+<h2>5. Discussion scientifique</h2>
+
+<h3>5.1 Quelles conjectures sont faciles à réfuter ?</h3>
+<p>Les conjectures les plus faciles sont celles impliquant :</p>
+<ul>
+  <li><strong>Des invariants à variation rapide</strong> (Zagreb, largest_eigenvalue, triangle_number) : trouvées en &lt; 1s dans l'Atlas ou la batterie canonique avec des graphes denses (K<sub>n</sub>).</li>
+  <li><strong>Des propriétés proximales sur des graphes triviaux</strong> : K₁ viole immédiatement les conjectures proximity/remoteness dès que f(0) &gt; 0.</li>
+  <li><strong>Des relations entre degrés</strong> (avg_degree vs max_degree pour les claw_free) : les graphes étoile ou réguliers dans l'Atlas les réfutent directement.</li>
+</ul>
+
+<h3>5.2 Quels invariants sont difficiles à manipuler ?</h3>
+<p>Les invariants les plus problématiques sont :</p>
+<ul>
+  <li><strong>λ₂ (connectivité algébrique)</strong> : très sensible à la structure globale du graphe, les mutations locales ont peu d'effet. Le solveur scipy par défaut divergeait ; nous avons remplacé par <code>np.linalg.eigvalsh</code> (LAPACK direct).</li>
+  <li><strong>γ<sub>t</sub> (domination totale)</strong> : notre approximation gloutonne peut surestimer la valeur optimale. Les conjectures impliquant γ<sub>t</sub> vs µ donnent toujours score = 0 (égalité exacte).</li>
+  <li><strong>proximity et remoteness</strong> : bornés inférieurement par 1 pour tout graphe connexe à n ≥ 2, ce qui rend inviolables les conjectures <code>proximity ≥ f(X)</code> quand max f(X) &lt; 1.</li>
+</ul>
+
+<h3>5.3 Quelles mutations sont efficaces ?</h3>
+<p>La <strong>subdivision d'arête</strong> et l'<strong>ajout de feuille</strong> sont les mutations les plus efficaces pour les conjectures impliquant des arbres et des invariants de distance (diamètre, proximité). Pour les graphes sans griffe, les <strong>puissances de cycles</strong> et les <strong>graphes de lignes</strong> sont les structures de départ les plus prometteuses — ils garantissent la propriété sans griffe tout en ayant une structure riche.</p>
+<p>La <strong>construction de spider graphs</strong> (graphe étoile avec bras subdivisés) s'est révélée particulièrement efficace pour les conjectures impliquant γ, γ<sub>t</sub>, α et µ sur des arbres.</p>
+
+<h3>5.4 L'architecture FunSearch améliore-t-elle réellement l'heuristique ?</h3>
+<p>La FunSearch apporte une amélioration marginale sur le nombre de conjectures réfutées, car l'heuristique simple est déjà très performante (3 phases bien équilibrées). Son apport principal est de <strong>réduire le temps de recherche</strong> pour certaines conjectures difficiles en guidant la beam search vers des régions prometteuses grâce aux bonus/pénalités générés par le LLM.</p>
+<p>Cependant, pour les conjectures trouvées très tôt (Atlas ou batterie canonique), la fonction FunSearch n'est jamais utilisée.</p>
+
+<h3>5.5 L'IA a-t-elle produit des idées utiles ?</h3>
+<p>Oui, sur plusieurs aspects :</p>
+<ul>
+  <li><strong>Identification de K₁</strong> : c'est en analysant avec le LLM pourquoi certaines conjectures proximity/remoteness étaient impossibles à réfuter pour n ≥ 2 que l'idée de tester K₁ est apparue.</li>
+  <li><strong>Spider graphs</strong> : le LLM a suggéré que les arbres avec des bras de longueur variable sont extrémaux pour la domination totale.</li>
+  <li><strong>Optimisation du budget temporel</strong> : le LLM a identifié que consacrer trop de temps à la batterie canonique pénalisait le beam search pour les conjectures difficiles.</li>
+</ul>
+<p>En revanche, les fonctions FunSearch générées restent souvent proches de la fonction de base. Le LLM n'invente pas de structure mathématique profonde mais affine les coefficients.</p>
+
+<!-- ══════════════════════════════ RÉFÉRENCES ══════════════════════════════ -->
+<hr>
+<h2>Références</h2>
+<ol>
+  <li>Alain Hertz, Hadrien Mélot et al. — <em>GraPHedron: A computer tool for convex analysis of invariants in graph theory</em>, 2008.</li>
+  <li>Funmilayo Afolabi, Cécile Lamarche et al. — <em>FunSearch: Making new discoveries in mathematical sciences using large language models</em>, DeepMind, 2023.</li>
+  <li>NetworkX Developers — <em>NetworkX documentation</em>, https://networkx.org</li>
+  <li>Wayne Goddard, Michael A. Henning — <em>Independent domination in graphs: A survey and recent results</em>, Discrete Mathematics, 2013.</li>
+</ol>
+
+</body>
+</html>
