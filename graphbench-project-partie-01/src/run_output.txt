@@ -1,0 +1,1186 @@
+  Benchmark chargé : 100 conjectures
+
+Lancement sur 100 conjectures (limite : 60s chacune)
+Benchmark : C:\Users\nv\Desktop\graphbench-project-corrige\graphbench-project-master\graphbench-project-partie-01\benchmark\benchmark.xlsx
+
+
+=================================================================
+Conjecture 1/100 | ID : 886
+Classe : connected
+Relation : triangle_number <= f(maximum_degree)
+=================================================================
+  [Canon] trouvé en 11.45s | score : 0.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 11.45s
+  graph6 : >>graph6<<K~~~~~~~~~~~
+  Violation (score) : 0.000000
+  n=12, m=66
+
+=================================================================
+Conjecture 2/100 | ID : 980
+Classe : connected
+Relation : clique_number <= f(average_degree)
+=================================================================
+  [Atlas] trouvé en 0.21s | score : 0.6250
+
+  CONTRE-EXEMPLE TROUVÉ en 0.21s
+  graph6 : >>graph6<<A_
+  Violation (score) : 0.625000
+  n=2, m=1
+
+=================================================================
+Conjecture 3/100 | ID : 981
+Classe : connected
+Relation : clique_number <= f(average_degree)
+=================================================================
+  [Atlas] trouvé en 0.14s | score : 0.3333
+
+  CONTRE-EXEMPLE TROUVÉ en 0.14s
+  graph6 : >>graph6<<A_
+  Violation (score) : 0.333333
+  n=2, m=1
+
+=================================================================
+Conjecture 4/100 | ID : 1177
+Classe : connected
+Relation : average_degree >= f(clique_number)
+=================================================================
+  [Atlas] trouvé en 0.13s | score : 0.3333
+
+  CONTRE-EXEMPLE TROUVÉ en 0.13s
+  graph6 : >>graph6<<A_
+  Violation (score) : 0.333333
+  n=2, m=1
+
+=================================================================
+Conjecture 5/100 | ID : 1178
+Classe : connected
+Relation : average_degree >= f(clique_number)
+=================================================================
+  [Atlas] trouvé en 0.19s | score : 0.2000
+
+  CONTRE-EXEMPLE TROUVÉ en 0.19s
+  graph6 : >>graph6<<A_
+  Violation (score) : 0.200000
+  n=2, m=1
+
+=================================================================
+Conjecture 6/100 | ID : 1191
+Classe : connected
+Relation : minimum_degree <= f(clique_number)
+=================================================================
+  [Canon] trouvé en 11.01s | score : 0.5695
+
+  CONTRE-EXEMPLE TROUVÉ en 11.01s
+  graph6 : >>graph6<<K??F~z{~Fw^_
+  Violation (score) : 0.569543
+  n=12, m=36
+
+=================================================================
+Conjecture 7/100 | ID : 1466
+Classe : connected
+Relation : independent_domination_number <= f(domination_number)
+=================================================================
+  [Atlas] trouvé en 0.31s | score : 0.4867
+
+  CONTRE-EXEMPLE TROUVÉ en 0.31s
+  graph6 : >>graph6<<Bo
+  Violation (score) : 0.486714
+  n=3, m=2
+
+=================================================================
+Conjecture 8/100 | ID : 1566
+Classe : connected
+Relation : independence_number >= f(total_domination_number)
+=================================================================
+  iter 2 (1.0s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 19.04s
+  graph6 : >>graph6<<ER`G
+  Violation (score) : 1.000000
+  n=6, m=6
+
+=================================================================
+Conjecture 9/100 | ID : 1587
+Classe : connected
+Relation : matching_number >= f(total_domination_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : 0.0000)
+
+=================================================================
+Conjecture 10/100 | ID : 1588
+Classe : connected
+Relation : matching_number >= f(total_domination_number)
+=================================================================
+  iter 3 (2.1s) | score : 0.0000
+  iter 6 (5.5s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 26.57s
+  graph6 : >>graph6<<J?gRC_CA?A?
+  Violation (score) : 1.000000
+  n=11, m=10
+
+=================================================================
+Conjecture 11/100 | ID : 1600
+Classe : connected
+Relation : vertex_cover_number >= f(total_domination_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : 0.0000)
+
+=================================================================
+Conjecture 12/100 | ID : 1601
+Classe : connected
+Relation : vertex_cover_number >= f(total_domination_number)
+=================================================================
+  iter 3 (2.4s) | score : 0.0000
+  iter 8 (9.7s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 33.15s
+  graph6 : >>graph6<<MSC?GgOW@??DG?O??
+  Violation (score) : 1.000000
+  n=14, m=14
+
+=================================================================
+Conjecture 13/100 | ID : 1708
+Classe : connected
+Relation : total_domination_number <= f(independence_number)
+=================================================================
+  iter 46 (31.4s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 52.82s
+  graph6 : >>graph6<<EbIG
+  Violation (score) : 1.000000
+  n=6, m=6
+
+=================================================================
+Conjecture 14/100 | ID : 1880
+Classe : connected
+Relation : independent_domination_number <= f(vertex_cover_number)
+=================================================================
+  [Atlas] trouvé en 0.18s | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 0.18s
+  graph6 : >>graph6<<Bo
+  Violation (score) : 1.000000
+  n=3, m=2
+
+=================================================================
+Conjecture 15/100 | ID : 1891
+Classe : connected
+Relation : total_domination_number <= f(vertex_cover_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : 0.0000)
+
+=================================================================
+Conjecture 16/100 | ID : 2041
+Classe : connected
+Relation : matching_number >= f(independent_domination_number)
+=================================================================
+  [Atlas] trouvé en 0.24s | score : 0.2500
+
+  CONTRE-EXEMPLE TROUVÉ en 0.24s
+  graph6 : >>graph6<<Bo
+  Violation (score) : 0.250000
+  n=3, m=2
+
+=================================================================
+Conjecture 17/100 | ID : 2051
+Classe : connected
+Relation : vertex_cover_number >= f(independent_domination_number)
+=================================================================
+  [Atlas] trouvé en 0.16s | score : 0.2500
+
+  CONTRE-EXEMPLE TROUVÉ en 0.16s
+  graph6 : >>graph6<<Bo
+  Violation (score) : 0.250000
+  n=3, m=2
+
+=================================================================
+Conjecture 18/100 | ID : 2117
+Classe : connected
+Relation : independent_domination_number <= f(matching_number)
+=================================================================
+  [Atlas] trouvé en 0.19s | score : 0.4867
+
+  CONTRE-EXEMPLE TROUVÉ en 0.19s
+  graph6 : >>graph6<<Bo
+  Violation (score) : 0.486714
+  n=3, m=2
+
+=================================================================
+Conjecture 19/100 | ID : 2120
+Classe : connected
+Relation : total_domination_number <= f(matching_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : 0.0000)
+
+=================================================================
+Conjecture 20/100 | ID : 2121
+Classe : connected
+Relation : total_domination_number <= f(matching_number)
+=================================================================
+  iter 8 (5.3s) | score : 0.0000
+  iter 10 (7.3s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 23.96s
+  graph6 : >>graph6<<L`GQ?G?P?BG?@?
+  Violation (score) : 1.000000
+  n=13, m=12
+
+=================================================================
+Conjecture 21/100 | ID : 4247
+Classe : tree
+Relation : independent_domination_number <= f(diameter)
+=================================================================
+  [Atlas] trouvé en 0.29s | score : 4.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 0.29s
+  graph6 : >>graph6<<A_
+  Violation (score) : 4.000000
+  n=2, m=1
+
+=================================================================
+Conjecture 22/100 | ID : 4668
+Classe : tree
+Relation : independent_domination_number <= f(vertex_cover_number)
+=================================================================
+  [Atlas] trouvé en 0.16s | score : 0.4867
+
+  CONTRE-EXEMPLE TROUVÉ en 0.16s
+  graph6 : >>graph6<<Bo
+  Violation (score) : 0.486714
+  n=3, m=2
+
+=================================================================
+Conjecture 23/100 | ID : 4712
+Classe : tree
+Relation : diameter >= f(independent_domination_number)
+=================================================================
+  [Atlas] trouvé en 0.21s | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 0.21s
+  graph6 : >>graph6<<A_
+  Violation (score) : 1.000000
+  n=2, m=1
+
+=================================================================
+Conjecture 24/100 | ID : 5952
+Classe : claw_free
+Relation : independence_number <= f(diameter)
+=================================================================
+  iter 2 (2.1s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 6.98s
+  graph6 : >>graph6<<Hua?_b?
+  Violation (score) : 1.000000
+  n=9, m=10
+
+=================================================================
+Conjecture 25/100 | ID : 5994
+Classe : claw_free
+Relation : domination_number <= f(radius)
+=================================================================
+  iter 1 (0.9s) | score : 0.4867
+
+  CONTRE-EXEMPLE TROUVÉ en 5.79s
+  graph6 : >>graph6<<IhCGKF??O
+  Violation (score) : 0.486714
+  n=10, m=11
+
+=================================================================
+Conjecture 26/100 | ID : 5996
+Classe : claw_free
+Relation : total_domination_number <= f(radius)
+=================================================================
+  iter 0 (0.1s) | score : 0.8867
+
+  CONTRE-EXEMPLE TROUVÉ en 5.01s
+  graph6 : >>graph6<<IhCGGC@A?
+  Violation (score) : 0.886714
+  n=10, m=9
+
+=================================================================
+Conjecture 27/100 | ID : 5998
+Classe : claw_free
+Relation : independence_number <= f(radius)
+=================================================================
+  iter 0 (0.1s) | score : 0.4867
+
+  CONTRE-EXEMPLE TROUVÉ en 5.07s
+  graph6 : >>graph6<<JgCK_?@?G__
+  Violation (score) : 0.486714
+  n=11, m=10
+
+=================================================================
+Conjecture 28/100 | ID : 6000
+Classe : claw_free
+Relation : independent_domination_number <= f(radius)
+=================================================================
+  [Canon] trouvé en 2.61s | score : 0.4867
+
+  CONTRE-EXEMPLE TROUVÉ en 2.61s
+  graph6 : >>graph6<<GhCGGC
+  Violation (score) : 0.486714
+  n=8, m=7
+
+=================================================================
+Conjecture 29/100 | ID : 6179
+Classe : claw_free
+Relation : average_degree >= f(maximum_degree)
+=================================================================
+  iter 0 (0.1s) | score : 0.0667
+
+  CONTRE-EXEMPLE TROUVÉ en 5.09s
+  graph6 : >>graph6<<IKTKoCc?_
+  Violation (score) : 0.066667
+  n=10, m=13
+
+=================================================================
+Conjecture 30/100 | ID : 6180
+Classe : claw_free
+Relation : average_degree >= f(maximum_degree)
+=================================================================
+  iter 0 (0.0s) | score : 0.2778
+
+  CONTRE-EXEMPLE TROUVÉ en 4.94s
+  graph6 : >>graph6<<Cs
+  Violation (score) : 0.277778
+  n=4, m=3
+
+=================================================================
+Conjecture 31/100 | ID : 6181
+Classe : claw_free
+Relation : average_degree >= f(maximum_degree)
+=================================================================
+  iter 0 (0.1s) | score : 0.2222
+
+  CONTRE-EXEMPLE TROUVÉ en 4.96s
+  graph6 : >>graph6<<FpaGG
+  Violation (score) : 0.222222
+  n=7, m=7
+
+=================================================================
+Conjecture 32/100 | ID : 6182
+Classe : claw_free
+Relation : average_degree >= f(maximum_degree)
+=================================================================
+  iter 1 (0.5s) | score : 0.0716
+
+  CONTRE-EXEMPLE TROUVÉ en 5.32s
+  graph6 : >>graph6<<DsC
+  Violation (score) : 0.071635
+  n=5, m=4
+
+=================================================================
+Conjecture 33/100 | ID : 6267
+Classe : claw_free
+Relation : maximum_degree <= f(average_degree)
+=================================================================
+  iter 0 (0.1s) | score : 0.4286
+
+  CONTRE-EXEMPLE TROUVÉ en 5.02s
+  graph6 : >>graph6<<GKxkoO
+  Violation (score) : 0.428571
+  n=8, m=12
+
+=================================================================
+Conjecture 34/100 | ID : 6268
+Classe : claw_free
+Relation : maximum_degree <= f(average_degree)
+=================================================================
+  iter 1 (0.4s) | score : 0.6250
+
+  CONTRE-EXEMPLE TROUVÉ en 5.18s
+  graph6 : >>graph6<<Cs
+  Violation (score) : 0.625000
+  n=4, m=3
+
+=================================================================
+Conjecture 35/100 | ID : 6269
+Classe : claw_free
+Relation : maximum_degree <= f(average_degree)
+=================================================================
+  iter 0 (0.1s) | score : 0.4324
+
+  CONTRE-EXEMPLE TROUVÉ en 4.99s
+  graph6 : >>graph6<<Fxa?G
+  Violation (score) : 0.432432
+  n=7, m=7
+
+=================================================================
+Conjecture 36/100 | ID : 6272
+Classe : claw_free
+Relation : clique_number <= f(average_degree)
+=================================================================
+  [Atlas] trouvé en 0.23s | score : 0.6000
+
+  CONTRE-EXEMPLE TROUVÉ en 0.23s
+  graph6 : >>graph6<<A_
+  Violation (score) : 0.600000
+  n=2, m=1
+
+=================================================================
+Conjecture 37/100 | ID : 6278
+Classe : claw_free
+Relation : clique_number <= f(average_degree)
+=================================================================
+  iter 58 (36.4s) | score : -1.0073
+  iter 59 (37.8s) | score : -0.7255
+  iter 60 (42.5s) | score : -0.4144
+  iter 61 (42.9s) | score : -0.3498
+  iter 62 (46.2s) | score : -0.1030
+  iter 63 (51.5s) | score : 0.1331
+
+  CONTRE-EXEMPLE TROUVÉ en 56.23s
+  graph6 : >>graph6<<XO@Q[??Q??????Ph??aKEP_u?A?O???O??O???CO??G?O??O???
+  Violation (score) : 0.133141
+  n=25, m=36
+
+=================================================================
+Conjecture 38/100 | ID : 6352
+Classe : claw_free
+Relation : average_degree >= f(clique_number)
+=================================================================
+  [Atlas] trouvé en 0.16s | score : 0.3333
+
+  CONTRE-EXEMPLE TROUVÉ en 0.16s
+  graph6 : >>graph6<<A_
+  Violation (score) : 0.333333
+  n=2, m=1
+
+=================================================================
+Conjecture 39/100 | ID : 6574
+Classe : claw_free
+Relation : independence_number <= f(total_domination_number)
+=================================================================
+  iter 0 (0.1s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 5.25s
+  graph6 : >>graph6<<EXa_
+  Violation (score) : 1.000000
+  n=6, m=6
+
+=================================================================
+Conjecture 40/100 | ID : 6582
+Classe : claw_free
+Relation : matching_number >= f(total_domination_number)
+=================================================================
+  iter 5 (3.7s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 8.66s
+  graph6 : >>graph6<<FIIOO
+  Violation (score) : 1.000000
+  n=7, m=6
+
+=================================================================
+Conjecture 41/100 | ID : 6903
+Classe : claw_free
+Relation : total_domination_number <= f(matching_number)
+=================================================================
+  iter 4 (3.0s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 8.00s
+  graph6 : >>graph6<<H@AISiA
+  Violation (score) : 1.000000
+  n=9, m=10
+
+=================================================================
+Conjecture 42/100 | ID : 688
+Classe : connected
+Relation : proximity >= f(density)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.3595)
+
+=================================================================
+Conjecture 43/100 | ID : 713
+Classe : connected
+Relation : remoteness >= f(density)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.1092)
+
+=================================================================
+Conjecture 44/100 | ID : 737
+Classe : connected
+Relation : second_smallest_laplace_eigenvalue >= f(density)
+=================================================================
+  iter 1 (0.7s) | score : -0.0343
+  iter 4 (4.7s) | score : -0.0200
+  iter 5 (6.2s) | score : -0.0000
+  iter 23 (36.2s) | score : 0.0029
+
+  CONTRE-EXEMPLE TROUVÉ en 53.65s
+  graph6 : >>graph6<<H~{?NCC
+  Violation (score) : 0.002943
+  n=9, m=16
+
+=================================================================
+Conjecture 45/100 | ID : 1021
+Classe : connected
+Relation : triangle_number >= f(average_degree)
+=================================================================
+  [Canon] trouvé en 8.75s | score : 2.0455
+
+  CONTRE-EXEMPLE TROUVÉ en 8.75s
+  graph6 : >>graph6<<J?~vfbo{F_?
+  Violation (score) : 2.045455
+  n=11, m=28
+
+=================================================================
+Conjecture 46/100 | ID : 1337
+Classe : connected
+Relation : average_degree <= f(triangle_number)
+=================================================================
+  [Canon] trouvé en 9.39s | score : 0.0909
+
+  CONTRE-EXEMPLE TROUVÉ en 9.39s
+  graph6 : >>graph6<<J?~vfbo{F_?
+  Violation (score) : 0.090909
+  n=11, m=28
+
+=================================================================
+Conjecture 47/100 | ID : 1591
+Classe : connected
+Relation : proximity >= f(total_domination_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.6250)
+
+=================================================================
+Conjecture 48/100 | ID : 1729
+Classe : connected
+Relation : proximity >= f(independence_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.6400)
+
+=================================================================
+Conjecture 49/100 | ID : 1793
+Classe : connected
+Relation : second_smallest_laplace_eigenvalue >= f(independence_number)
+=================================================================
+  iter 0 (0.1s) | score : 0.0169
+
+  CONTRE-EXEMPLE TROUVÉ en 20.35s
+  graph6 : >>graph6<<J`CGGC@?J??
+  Violation (score) : 0.016873
+  n=11, m=10
+
+=================================================================
+Conjecture 50/100 | ID : 1892
+Classe : connected
+Relation : total_domination_number <= f(vertex_cover_number)
+=================================================================
+  iter 7 (5.4s) | score : 0.0000
+  iter 9 (7.9s) | score : 1.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 26.65s
+  graph6 : >>graph6<<IdO_?Q??g
+  Violation (score) : 1.000000
+  n=10, m=9
+
+=================================================================
+Conjecture 51/100 | ID : 1917
+Classe : connected
+Relation : proximity >= f(vertex_cover_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.6308)
+
+=================================================================
+Conjecture 52/100 | ID : 1919
+Classe : connected
+Relation : proximity >= f(vertex_cover_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.7168)
+
+=================================================================
+Conjecture 53/100 | ID : 2129
+Classe : connected
+Relation : proximity >= f(matching_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.6308)
+
+=================================================================
+Conjecture 54/100 | ID : 2131
+Classe : connected
+Relation : proximity >= f(matching_number)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.7168)
+
+=================================================================
+Conjecture 55/100 | ID : 2252
+Classe : connected
+Relation : total_domination_number <= f(randic_index)
+=================================================================
+  iter 1 (1.2s) | score : -0.4176
+  iter 2 (3.7s) | score : 0.2056
+
+  CONTRE-EXEMPLE TROUVÉ en 18.67s
+  graph6 : >>graph6<<QhcGGC@?G?_@?@??_AG?@??C??G
+  Violation (score) : 0.205575
+  n=18, m=19
+
+=================================================================
+Conjecture 56/100 | ID : 2882
+Classe : connected
+Relation : independent_domination_number <= f(second_zagreb_index)
+=================================================================
+  [Atlas] trouvé en 0.11s | score : 0.2500
+
+  CONTRE-EXEMPLE TROUVÉ en 0.11s
+  graph6 : >>graph6<<Bo
+  Violation (score) : 0.250000
+  n=3, m=2
+
+=================================================================
+Conjecture 57/100 | ID : 3144
+Classe : connected
+Relation : total_domination_number >= f(proximity)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -7.7778)
+
+=================================================================
+Conjecture 58/100 | ID : 3157
+Classe : connected
+Relation : matching_number >= f(proximity)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -27.3333)
+
+=================================================================
+Conjecture 59/100 | ID : 3191
+Classe : connected
+Relation : vertex_cover_number >= f(proximity)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -9.1111)
+
+=================================================================
+Conjecture 60/100 | ID : 3193
+Classe : connected
+Relation : vertex_cover_number >= f(proximity)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -27.3333)
+
+=================================================================
+Conjecture 61/100 | ID : 3368
+Classe : connected
+Relation : matching_number >= f(remoteness)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -1.0287)
+
+=================================================================
+Conjecture 62/100 | ID : 3384
+Classe : connected
+Relation : vertex_cover_number >= f(remoteness)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -1.0287)
+
+=================================================================
+Conjecture 63/100 | ID : 3550
+Classe : connected
+Relation : triangle_number <= f(largest_eigenvalue)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -16.8086)
+
+=================================================================
+Conjecture 64/100 | ID : 3961
+Classe : connected
+Relation : average_degree <= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 0 (0.3s) | score : -5.2506
+  iter 1 (2.6s) | score : -4.6761
+  iter 2 (6.8s) | score : -4.2815
+  iter 3 (10.6s) | score : -4.0457
+  iter 4 (11.0s) | score : -3.7257
+  iter 5 (13.7s) | score : -3.4857
+  iter 6 (17.4s) | score : -3.0366
+  iter 7 (21.2s) | score : -2.7088
+  iter 8 (21.5s) | score : -2.4727
+  iter 9 (24.1s) | score : -1.9291
+  iter 10 (27.5s) | score : -1.6891
+  iter 11 (30.8s) | score : -0.9511
+  iter 12 (34.1s) | score : -0.7911
+  iter 13 (34.5s) | score : -0.5511
+  iter 14 (37.2s) | score : -0.3111
+  iter 15 (40.3s) | score : -0.1511
+  iter 16 (43.5s) | score : 0.1652
+
+  CONTRE-EXEMPLE TROUVÉ en 51.11s
+  graph6 : >>graph6<<XV?N@B~~v}^x~o~w^yF~?~|@E?F}SF~_V~??~oWN~E?zyOX~wGg
+  Violation (score) : 0.165220
+  n=25, m=168
+
+=================================================================
+Conjecture 65/100 | ID : 3979
+Classe : connected
+Relation : independence_number >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  [Canon] trouvé en 4.10s | score : 0.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 4.10s
+  graph6 : >>graph6<<IhCGGC@?G
+  Violation (score) : 0.000000
+  n=10, m=9
+
+=================================================================
+Conjecture 66/100 | ID : 4288
+Classe : tree
+Relation : second_smallest_laplace_eigenvalue >= f(diameter)
+=================================================================
+  iter 0 (0.0s) | score : -0.2056
+  iter 1 (0.4s) | score : -0.1905
+  iter 2 (1.1s) | score : -0.1808
+  iter 3 (1.9s) | score : -0.1717
+  iter 4 (2.9s) | score : -0.1653
+  iter 5 (3.9s) | score : -0.1594
+  iter 6 (5.0s) | score : -0.1559
+  iter 7 (6.2s) | score : -0.1528
+  iter 8 (7.6s) | score : -0.1488
+  iter 9 (9.1s) | score : -0.1449
+  iter 10 (10.6s) | score : -0.1425
+  iter 11 (10.8s) | score : -0.1407
+  iter 12 (12.4s) | score : -0.1399
+  iter 13 (14.1s) | score : -0.1394
+  iter 14 (15.7s) | score : -0.1391
+  iter 15 (17.4s) | score : -0.1387
+  iter 16 (19.0s) | score : -0.1380
+  iter 17 (20.7s) | score : -0.1379
+  iter 20 (23.8s) | score : -0.1371
+  iter 22 (27.0s) | score : -0.1367
+  iter 23 (28.6s) | score : -0.1362
+  iter 24 (30.3s) | score : -0.1359
+  iter 29 (36.4s) | score : -0.1351
+  iter 36 (45.5s) | score : -0.1345
+  iter 42 (53.6s) | score : -0.1343
+  iter 45 (57.7s) | score : -0.1336
+
+  Aucun contre-exemple (meilleur score : -0.1336)
+
+=================================================================
+Conjecture 67/100 | ID : 5381
+Classe : tree
+Relation : remoteness >= f(proximity)
+=================================================================
+  [Atlas] trouvé en 0.07s | score : 0.4785
+
+  CONTRE-EXEMPLE TROUVÉ en 0.07s
+  graph6 : >>graph6<<A_
+  Violation (score) : 0.478469
+  n=2, m=1
+
+=================================================================
+Conjecture 68/100 | ID : 5421
+Classe : tree
+Relation : domination_number >= f(remoteness)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.9845)
+
+=================================================================
+Conjecture 69/100 | ID : 5968
+Classe : claw_free
+Relation : proximity >= f(diameter)
+=================================================================
+  restart (10.2s) | score : 0.3978
+
+  CONTRE-EXEMPLE TROUVÉ en 12.96s
+  graph6 : >>graph6<<@
+  Violation (score) : 0.397829
+  n=1, m=0
+
+=================================================================
+Conjecture 70/100 | ID : 5983
+Classe : claw_free
+Relation : second_smallest_laplace_eigenvalue >= f(diameter)
+=================================================================
+  iter 0 (0.0s) | score : 0.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 2.43s
+  graph6 : >>graph6<<IHCG?D@_o
+  Violation (score) : 0.000000
+  n=10, m=10
+
+=================================================================
+Conjecture 71/100 | ID : 6011
+Classe : claw_free
+Relation : remoteness >= f(radius)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.3826)
+
+=================================================================
+Conjecture 72/100 | ID : 6013
+Classe : claw_free
+Relation : remoteness >= f(radius)
+=================================================================
+
+  Aucun contre-exemple (meilleur score : -0.0326)
+
+=================================================================
+Conjecture 73/100 | ID : 6020
+Classe : claw_free
+Relation : second_smallest_laplace_eigenvalue >= f(radius)
+=================================================================
+  iter 0 (0.1s) | score : 0.0007
+
+  CONTRE-EXEMPLE TROUVÉ en 2.45s
+  graph6 : >>graph6<<IhO??CH@_
+  Violation (score) : 0.000710
+  n=10, m=9
+
+=================================================================
+Conjecture 74/100 | ID : 6124
+Classe : claw_free
+Relation : remoteness <= f(density)
+=================================================================
+  [Atlas] trouvé en 0.12s | score : 0.3576
+
+  CONTRE-EXEMPLE TROUVÉ en 0.12s
+  graph6 : >>graph6<<Bo
+  Violation (score) : 0.357627
+  n=3, m=2
+
+=================================================================
+Conjecture 75/100 | ID : 6270
+Classe : claw_free
+Relation : maximum_degree <= f(average_degree)
+=================================================================
+  iter 0 (0.1s) | score : 0.3003
+
+  CONTRE-EXEMPLE TROUVÉ en 2.50s
+  graph6 : >>graph6<<O~~~~~~~~~~~~~~~~~w_?
+  Violation (score) : 0.300255
+  n=16, m=106
+
+=================================================================
+Conjecture 76/100 | ID : 6351
+Classe : claw_free
+Relation : maximum_degree <= f(clique_number)
+=================================================================
+  [Canon] trouvé en 1.50s | score : 1.5984
+
+  CONTRE-EXEMPLE TROUVÉ en 1.50s
+  graph6 : >>graph6<<M]~v~z~~v~~}~~~~?
+  Violation (score) : 1.598403
+  n=14, m=84
+
+=================================================================
+Conjecture 77/100 | ID : 6466
+Classe : claw_free
+Relation : largest_eigenvalue <= f(triangle_number)
+=================================================================
+  iter 0 (0.1s) | score : 0.0365
+
+  CONTRE-EXEMPLE TROUVÉ en 2.47s
+  graph6 : >>graph6<<L]~v~z~|v~~}?A
+  Violation (score) : 0.036516
+  n=13, m=60
+
+=================================================================
+Conjecture 78/100 | ID : 6472
+Classe : claw_free
+Relation : largest_eigenvalue <= f(triangle_number)
+=================================================================
+  iter 0 (0.2s) | score : 0.0485
+
+  CONTRE-EXEMPLE TROUVÉ en 2.57s
+  graph6 : >>graph6<<NbIkZzZ{ElUrqkM||iO
+  Violation (score) : 0.048512
+  n=15, m=61
+
+=================================================================
+Conjecture 79/100 | ID : 6617
+Classe : claw_free
+Relation : second_smallest_laplace_eigenvalue >= f(total_domination_number)
+=================================================================
+  iter 0 (0.0s) | score : 0.0130
+
+  CONTRE-EXEMPLE TROUVÉ en 2.41s
+  graph6 : >>graph6<<HgCGaCG
+  Violation (score) : 0.013047
+  n=9, m=8
+
+=================================================================
+Conjecture 80/100 | ID : 7205
+Classe : claw_free
+Relation : second_zagreb_index >= f(first_zagreb_index)
+=================================================================
+  [Canon] trouvé en 1.20s | score : 32.3077
+
+  CONTRE-EXEMPLE TROUVÉ en 1.20s
+  graph6 : >>graph6<<NbIkZxZ{EnUrqkMl|iO
+  Violation (score) : 32.307692
+  n=15, m=60
+
+=================================================================
+Conjecture 81/100 | ID : 7206
+Classe : claw_free
+Relation : second_zagreb_index >= f(first_zagreb_index)
+=================================================================
+  [Canon] trouvé en 1.20s | score : 485.3333
+
+  CONTRE-EXEMPLE TROUVÉ en 1.20s
+  graph6 : >>graph6<<NbIkZxZ{EnUrqkMl|iO
+  Violation (score) : 485.333333
+  n=15, m=60
+
+=================================================================
+Conjecture 82/100 | ID : 7212
+Classe : claw_free
+Relation : second_zagreb_index >= f(first_zagreb_index)
+=================================================================
+  [Canon] trouvé en 1.17s | score : 251.1111
+
+  CONTRE-EXEMPLE TROUVÉ en 1.17s
+  graph6 : >>graph6<<NbIkZxZ{EnUrqkMl|iO
+  Violation (score) : 251.111111
+  n=15, m=60
+
+=================================================================
+Conjecture 83/100 | ID : 7213
+Classe : claw_free
+Relation : second_zagreb_index >= f(first_zagreb_index)
+=================================================================
+  [Canon] trouvé en 1.20s | score : 240.2667
+
+  CONTRE-EXEMPLE TROUVÉ en 1.20s
+  graph6 : >>graph6<<NbIkZxZ{EnUrqkMl|iO
+  Violation (score) : 240.266667
+  n=15, m=60
+
+=================================================================
+Conjecture 84/100 | ID : 7565
+Classe : claw_free
+Relation : triangle_number >= f(largest_eigenvalue)
+=================================================================
+  iter 0 (0.2s) | score : -0.0427
+  iter 1 (1.4s) | score : 0.2823
+
+  CONTRE-EXEMPLE TROUVÉ en 3.76s
+  graph6 : >>graph6<<PbIkZxZ{EnUrqkMl|iO?O@??
+  Violation (score) : 0.282287
+  n=17, m=62
+
+=================================================================
+Conjecture 85/100 | ID : 7566
+Classe : claw_free
+Relation : triangle_number >= f(largest_eigenvalue)
+=================================================================
+  iter 0 (0.1s) | score : 3.0156
+
+  CONTRE-EXEMPLE TROUVÉ en 2.55s
+  graph6 : >>graph6<<L]|v~z~|v~~}A?
+  Violation (score) : 3.015574
+  n=13, m=59
+
+=================================================================
+Conjecture 86/100 | ID : 7694
+Classe : claw_free
+Relation : proximity >= f(largest_distance_eigenvalue)
+=================================================================
+  restart (40.8s) | score : 0.3527
+
+  CONTRE-EXEMPLE TROUVÉ en 43.22s
+  graph6 : >>graph6<<@
+  Violation (score) : 0.352706
+  n=1, m=0
+
+=================================================================
+Conjecture 87/100 | ID : 7695
+Classe : claw_free
+Relation : proximity >= f(largest_distance_eigenvalue)
+=================================================================
+  restart (40.4s) | score : 0.3061
+
+  CONTRE-EXEMPLE TROUVÉ en 42.82s
+  graph6 : >>graph6<<@
+  Violation (score) : 0.306060
+  n=1, m=0
+
+=================================================================
+Conjecture 88/100 | ID : 7703
+Classe : claw_free
+Relation : second_smallest_laplace_eigenvalue >= f(largest_distance_eigenvalue)
+=================================================================
+  [Canon] trouvé en 1.35s | score : 0.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 1.35s
+  graph6 : >>graph6<<HhCGGC@
+  Violation (score) : 0.000000
+  n=9, m=8
+
+=================================================================
+Conjecture 89/100 | ID : 7711
+Classe : claw_free
+Relation : diameter >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 0 (0.1s) | score : 0.0281
+
+  CONTRE-EXEMPLE TROUVÉ en 2.42s
+  graph6 : >>graph6<<IhCGGC@G?
+  Violation (score) : 0.028128
+  n=10, m=9
+
+=================================================================
+Conjecture 90/100 | ID : 7712
+Classe : claw_free
+Relation : diameter >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 0 (0.0s) | score : -0.2807
+  iter 1 (0.4s) | score : -0.1324
+  iter 2 (1.2s) | score : 0.4031
+
+  CONTRE-EXEMPLE TROUVÉ en 3.62s
+  graph6 : >>graph6<<J`ooa@?AS_?
+  Violation (score) : 0.403119
+  n=11, m=13
+
+=================================================================
+Conjecture 91/100 | ID : 7713
+Classe : claw_free
+Relation : diameter >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 1 (0.4s) | score : -0.1709
+  iter 2 (1.2s) | score : 0.1369
+
+  CONTRE-EXEMPLE TROUVÉ en 3.58s
+  graph6 : >>graph6<<I`S`A?o?G
+  Violation (score) : 0.136868
+  n=10, m=10
+
+=================================================================
+Conjecture 92/100 | ID : 7718
+Classe : claw_free
+Relation : radius >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 0 (0.1s) | score : 0.0377
+
+  CONTRE-EXEMPLE TROUVÉ en 2.46s
+  graph6 : >>graph6<<IgCGGC@O_
+  Violation (score) : 0.037658
+  n=10, m=9
+
+=================================================================
+Conjecture 93/100 | ID : 7719
+Classe : claw_free
+Relation : radius >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 1 (0.5s) | score : 0.2497
+
+  CONTRE-EXEMPLE TROUVÉ en 2.95s
+  graph6 : >>graph6<<JgH??c@A@A?
+  Violation (score) : 0.249670
+  n=11, m=10
+
+=================================================================
+Conjecture 94/100 | ID : 7732
+Classe : claw_free
+Relation : maximum_degree <= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 0 (0.2s) | score : 1.9313
+
+  CONTRE-EXEMPLE TROUVÉ en 2.68s
+  graph6 : >>graph6<<Q]~v~y~~v~~}~~~~^~~~}O??G??
+  Violation (score) : 1.931331
+  n=18, m=113
+
+=================================================================
+Conjecture 95/100 | ID : 7734
+Classe : claw_free
+Relation : average_degree <= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 0 (0.3s) | score : -1.6060
+  iter 1 (2.9s) | score : -1.6060
+  iter 2 (7.3s) | score : -1.3184
+
+  Aucun contre-exemple (meilleur score : -1.3184)
+
+============================
+  Aucun contre-exemple (meilleur score : -1.3184)
+
+=================================================================
+Conjecture 96/100 | ID : 7743
+Classe : claw_free
+Relation : domination_number >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 1 (0.4s) | score : 0.3029
+
+  CONTRE-EXEMPLE TROUVÉ en 2.40s
+  graph6 : >>graph6<<J`@??S@W?c?
+  Violation (score) : 0.302889
+  n=11, m=10
+
+=================================================================
+Conjecture 97/100 | ID : 7753
+Classe : claw_free
+Relation : total_domination_number >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 1 (0.4s) | score : 0.3196
+
+  CONTRE-EXEMPLE TROUVÉ en 2.35s
+  graph6 : >>graph6<<IhCGGCCW?
+  Violation (score) : 0.319649
+  n=10, m=10
+
+=================================================================
+Conjecture 98/100 | ID : 7773
+Classe : claw_free
+Relation : independent_domination_number >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 0 (0.1s) | score : -1.1542
+  iter 2 (1.0s) | score : -1.1310
+  iter 4 (2.3s) | score : -0.8308
+  iter 5 (3.0s) | score : -0.8308
+  iter 6 (3.7s) | score : -0.6496
+  iter 7 (4.4s) | score : -0.6496
+  iter 35 (25.9s) | score : -0.6496
+  iter 45 (32.5s) | score : -0.4958
+  restart (41.4s) | score : 3.4624
+
+  CONTRE-EXEMPLE TROUVÉ en 43.35s
+  graph6 : >>graph6<<@
+  Violation (score) : 3.462416
+  n=1, m=0
+
+=================================================================
+Conjecture 99/100 | ID : 7811
+Classe : claw_free
+Relation : largest_eigenvalue <= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  iter 0 (0.3s) | score : -2.0940
+  iter 1 (2.1s) | score : -2.0690
+  iter 2 (5.3s) | score : -1.5756
+  iter 3 (8.5s) | score : -1.4020
+  iter 4 (11.9s) | score : -1.4020
+  iter 7 (17.8s) | score : -1.3488
+  iter 8 (21.2s) | score : -1.3269
+  iter 11 (27.0s) | score : -1.3269
+
+  Aucun contre-exemple (meilleur score : -1.3269)
+
+=================================================================
+Conjecture 100/100 | ID : 7813
+Classe : claw_free
+Relation : largest_distance_eigenvalue >= f(second_smallest_laplace_eigenvalue)
+=================================================================
+  [Canon] trouvé en 1.17s | score : 0.0000
+
+  CONTRE-EXEMPLE TROUVÉ en 1.17s
+  graph6 : >>graph6<<HhCGGC@
+  Violation (score) : 0.000000
+  n=9,
